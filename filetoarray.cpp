@@ -42,16 +42,16 @@ int main(int argc, char *argv[])
     printf("\n\n");
 
     printf("****PRINTING FILE AS CHARS****\n\n");
-
+    char *file_char = (char *)file_in_memory;
     for (int i = 0; i < sb.st_size; i++) {
-        printf("%c", (char)file_in_memory[i]);
+        printf("%c", file_char[i]);
     }
     printf("\n\n");
 
     printf("****PRINTING FILE AS INTS****\n\n");
-
-    for (int i = 0; i < sb.st_size; i++) {
-        printf("%d", (int)file_in_memory[i]);
+    int *file_int = (int *)file_in_memory;
+    for (int i = 0; i < sb.st_size/8; i++) {
+        printf("%d", file_int[i]);
     }
     printf("\n\n");
 
